@@ -27,6 +27,7 @@ function App() {
     const fetchImage = async () => {
       try {
         setIsLoading(true);
+        setLoadMore(false);
         const { results, total_pages } = await getImage(page, searchValue);
 
         if (!total_pages) return;
@@ -57,6 +58,7 @@ function App() {
 
     setImages([]);
     setPage(1);
+    setLoadMore(false);
 
     e.target.reset();
   };
